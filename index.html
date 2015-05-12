@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>JSON Sample</title>
+    <title>Love Linda</title>
 </head>
 <body>
-    <div id="placeholder"></div>
+    <div id="getData"></div>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script>
   $.getJSON('data.json', function(data) {
@@ -15,7 +15,7 @@
         }
 
         output+="</ul>";
-        document.getElementById("placeholder").innerHTML=output;
+        document.getElementById("getData").innerHTML=output;
   });
     </script>
 </body>
