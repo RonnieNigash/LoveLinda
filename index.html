@@ -3,20 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <title>Love Linda</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse:collapse;
+		}
+		th, td {
+			padding: 5px;
+		}
+	</style>
 </head>
 <body>
-    <div id="getData"></div>
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script>
-  $.getJSON('data.json', function(data) {
-        var output="<ul>";
-        for (var i in data.people) {
-            output+="<li>" + data.people[i].firstName + " " + data.people[i].lastName + "--" + data.people[i].phoneNumber"</li>";
-        }
+	<script>
+		if(window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
 
-        output+="</ul>";
-        document.getElementById("getData").innerHTML=output;
-  });
-    </script>
+		xmlhttp.open("GET", "nameList.xml", false);
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+
+		document.write("<table><tr><th>Name</th><th>Phone Number</th></tr>");
+		var tagsList = xmlDoc.getElementsByTagName("PEOPLE");
+		for (var i = 0; i < tagsList.length; i++) {
+			document.write("<tr><td>");
+			document.write(tagsList[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue);
+		   	document.write("</td><td>");
+		   	document.write(tagsList[i].getElementsByTagName("NUMBER")[0].childNodes[0].nodeValue);
+			document.write("</td></tr>");
+		}
+		document.write("</table>");
+	</script>
 </body>
 </html>
