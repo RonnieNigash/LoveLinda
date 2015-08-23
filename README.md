@@ -1,3 +1,6 @@
+# Update
+Application was a success, code will not be posted to github to protect private information.
+
 # LoveLinda
 Web App hosted on a Raspberry Pi for my grandmother
 
@@ -10,3 +13,4 @@ From Linda’s perspective, I will develop a device that gives her two names a d
 # Tech Specs
 
 Getting into the details, this project will be part code, involving a micro-controller and perhaps a web-server. A Raspberry Pi connected to a monitor gives the required content. I thought of hooking this application in with a touch-screen module, a VOIP application like Skype or building out an Asterisk server. But these hacks would be more of a second iteration. In the past, she has failed with technology — the more forms of input, the less approachable the device. Building in redundancy so that if the device is unplugged by her roaming cat, the application will restart when plugged back in. I will design a modular web app with lots of color and attractive interface to my grandmother, offering the content she needs.
+
